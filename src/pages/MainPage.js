@@ -131,8 +131,9 @@ const StartButton = styled.button`
     background-color: ${({ theme }) => theme.colors.GRAY};
     color: ${({ theme }) => theme.colors.WHITE};
     border: none;
-    margin-top: 45px;
     cursor: pointer;
+    position: fixed;
+    bottom: 7%;
 `
 
 export default MainPage;
