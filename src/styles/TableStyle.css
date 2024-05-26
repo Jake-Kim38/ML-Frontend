@@ -1,0 +1,23 @@
+.styled-table {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-collapse: collapse;
+    border: 1px solid #262730;
+    background-color: #262730;
+    color: white;
+    font-size: 40px;
+    border-spacing: 60px;
+  }
+  
+  .styled-table th, .styled-table td {
+    padding: 40px;
+    text-align: center;
+    border: 2px solid white;
+    white-space: nowrap;
+    min-width: 100px;
+  }
+  
+  .styled-table th {
+    background-color: #262730;
+  }
