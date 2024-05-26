@@ -1,5 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
+import { Theme } from './styles/Theme';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
