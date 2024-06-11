@@ -21,18 +21,14 @@ const MainPage = () => {
             <ContentArea>
                 <LeftSideArea>
                     <ButtonArea>
-                        <FontAwesomeIcon icon={faArrowUpFromBracket} size="3x" color="white"/>
-                        <ButtonText>이미지를 올려주세요.</ButtonText>
                         <ImageInput type="file" accept="image/^" onChange={handleImageUpload} placeholder="파일 탐색"/>
+                        <StartButton onClick={() => console.log("hi")}>측정 진행</StartButton>
                     </ButtonArea>
                     {image && (
                         <ImageArea>
                             <MyImage src={image} alt="Uploaded"/>
                         </ImageArea>
                     )}
-                    <StartArea>
-                        <StartButton>측정 진행</StartButton>
-                    </StartArea>
                 </LeftSideArea>
                 <RightSideArea>
                     <DataTable/>
@@ -57,6 +53,7 @@ const TitleArea = styled.div`
 
 const ContentArea = styled.div`
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 80%;
 `
@@ -64,27 +61,31 @@ const ContentArea = styled.div`
 const LeftSideArea = styled.div`
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 100%;
+    align-items: center;
+    width: 100%;
+    height: 50%;
 `
 
 const RightSideArea = styled.div`
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const TitleText = styled.p`
     font-weight: 600;
-    font-size: 54px;
+    font-size: 38px;
     color: ${({ theme }) => theme.colors.WHITE};
 `
 
 const ButtonArea = styled.div`
-    width: 95%;
+    width: 70%;
     height: 85px;
     margin-left: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.GRAY};
 `
@@ -92,7 +93,7 @@ const ButtonArea = styled.div`
 const ButtonText = styled.p`
     color: ${({ theme }) => theme.colors.WHITE};
     font-weight: 600;
-    font-size: 32px;
+    font-size: 25px;
     margin-left: 52px;
 `
 
@@ -100,16 +101,15 @@ const ImageInput = styled.input`
     background-color: ${({ theme }) => theme.colors.BLACK};
     color: ${({ theme }) => theme.colors.WHITE};
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     border: none;
     margin-left: 97px;
 `
 
 const ImageArea = styled.div`
-    width: 95%;
-    height: 75%;
-    margin-left: 20px;
-    margin-top: 60px;
+    width: 40%;
+    height: 100%;
+    margin-top: 10px;
 `
 
 const MyImage = styled.img`
@@ -117,23 +117,16 @@ const MyImage = styled.img`
     height: 100%;
 `
 
-const StartArea = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-`
-
 const StartButton = styled.button`
-    width: 30%;
-    font-size: 40px;
+    width: 15%;
+    font-size: 24px;
     font-weight: 600;
     text-align: center;
     background-color: ${({ theme }) => theme.colors.GRAY};
     color: ${({ theme }) => theme.colors.WHITE};
-    border: none;
+    border: 1px solid white;
     cursor: pointer;
-    position: fixed;
-    bottom: 7%;
+    margin-left: 5px;
 `
 
 export default MainPage;
